@@ -4,7 +4,25 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <div>one div</div>
+      <Header/>
+      <Technologies />
+
+    </div>
+  );
+}
+
+const Header = () => {
+    return (
+        <div>
+            <a href='#'>Home</a>
+            <a href='#'>News Feed</a>
+            <a href='#'>Messages</a>
+        </div>
+    )
+}
+
+const Technologies = () => {
+    return(
         <div>
             <ul>
                 <li>html</li>
@@ -13,9 +31,9 @@ const App = () => {
                 <li>react</li>
             </ul>
         </div>
-
-    </div>
-  );
+    )
 }
 
+
 export default App;
+
