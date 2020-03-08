@@ -13,29 +13,11 @@
 
 }
 
-.header {
-  grid-area: h;
-  background-color: deepskyblue;
-}
-.header img {
-  width: 5rem;
-}
-.lnav {
-  grid-area: lnav;
-  background-color: greenyellow;
-  padding-left: 1rem;
 
-}
+
 .rnav {
   grid-area: rnav;
   background-color: bisque;
   padding-left: 1rem;
 
-}
-.content {
-  grid-area: content;
-}
-.content img {
-  width: 45rem;
-  height: 15rem;
 }

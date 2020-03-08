@@ -1,8 +1,9 @@
 import React from "react";
+import s from './LeftNavbar.module.css'
 
 const LeftNavbar = () => {
     return (
-        <nav className='lnav' >
+        <nav className={s.lnav} >
             <div><a href="">Profile</a></div>
             <div><a href="">Messages</a></div>
             <div><a href="">News</a></div>

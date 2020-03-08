@@ -1,8 +1,9 @@
 import React from "react";
+import s from './RightNavbar.module.css'
 
 const RightNavbar = () => {
     return (
-        <nav className='rnav' >
+        <nav className={s.rnav} >
             <div>Hashtags</div>
             <div>Add</div>
             <div></div>   

@@ -1,0 +1,5 @@
+.lnav {
+    grid-area: lnav;
+    background-color: greenyellow;
+    padding-left: 1rem;
+}
