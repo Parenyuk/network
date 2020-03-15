@@ -1,3 +1,6 @@
+.App {
+  background-color: #f5f7f6;
+}
 .App-wrapper {
   width: 1200px;
   display: grid;
@@ -9,10 +12,13 @@
   grid-auto-columns: 2fr 6fr 2fr;
   grid-gap: 10px;
   padding-left: 10rem;
-
+  min-height: 47rem;
 
 }
-
+.App-wrapper-content {
+  grid-area: content;
+  background-color: white;
+}
 
 
 .rnav {
