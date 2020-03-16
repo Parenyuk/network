@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import LeftNavbar from "./components/LeftNavbar/LeftNavbar";
 import Profile from "./components/Profile/Profile";
 import RightNavbar from "./components/RightNavbar/RightNavbar";
-import Dialogs from "./components/Dialogs/Dialogs";
+import Messeges from "./components/Dialogs/Messeges";
 import {BrowserRouter, Route} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Audio from "./components/Audio/Audio";
@@ -21,7 +21,7 @@ const App = () => {
              <LeftNavbar/>
              <div className="App-wrapper-content" >
                  <Route path="/profile"><Profile/> </Route>
-                 <Route path="/messages"><Dialogs/> </Route>
+                 <Route path="/messages"><Messeges/> </Route>
                  <Route path="/news"><News/> </Route>
                  <Route path="/audio"><Audio/> </Route>
                  <Route path="/settings"><Settings/> </Route>
