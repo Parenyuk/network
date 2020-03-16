@@ -21,7 +21,7 @@ const App = () => {
              <LeftNavbar/>
              <div className="App-wrapper-content" >
                  <Route path="/profile"><Profile/> </Route>
-                 <Route path="/messages"><Messeges/> </Route>
+                 <Route exact  path="/messages"><Messeges/> </Route>
                  <Route path="/news"><News/> </Route>
                  <Route path="/audio"><Audio/> </Route>
                  <Route path="/settings"><Settings/> </Route>

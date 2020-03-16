@@ -5,6 +5,7 @@
     display: grid;
     grid-template-areas: "img head";
     grid-template-columns: 1fr 8fr;
+    padding: 1rem;
 }
 .messege img {
     display: grid;
@@ -17,7 +18,8 @@
     display: grid;
     grid-area: head;
 }
-.userName {
+.userName a{
     color:#7eb3cf;
     font-weight: bold;
+    text-decoration: none;
 }

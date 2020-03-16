@@ -1,5 +1,6 @@
 import React from "react";
 import s from './Messeges.module.css';
+import {NavLink} from "react-router-dom";
 
 const Messeges = () => {
     return (
@@ -8,35 +9,35 @@ const Messeges = () => {
                 <div className={s.messege}>
                     <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
                     <div className={s.head}>
-                        <span className={s.userName}>Victor Parenyuk</span>
-                        <span className={s.text}>Hello!</span>
+                        <div className={s.userName}><NavLink to="/messages/1">Victor Parenyuk</NavLink> </div>
+                        <div className={s.text}>Hello!</div>
                     </div>
                 </div>
                 <div className={s.messege}> <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
                     <div className={s.head}>
-                        <span className={s.userName}>Vasia Pypkin</span>
-                        <span className={s.text}>Hy</span>
+                        <div className={s.userName}><NavLink to="/messages/2">Vasia Pypkin</NavLink> </div>
+                        <div className={s.text}>Hy!</div>
                     </div>
                 </div>
                 <div className={s.messege}>
                     <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
                     <div className={s.head}>
-                        <span className={s.userName}>Zinedin Zidan</span>
-                        <span className={s.text}>Hello!</span>
+                        <div className={s.userName}><NavLink to="/messages/3">Zinedin Zidan</NavLink> </div>
+                        <div className={s.text}>Hello!</div>
                     </div>
                 </div>
                 <div className={s.messege}>
                     <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
                     <div className={s.head}>
-                        <span className={s.userName}>Maradona</span>
-                        <span className={s.text}>Hello!</span>
+                        <div className={s.userName}><NavLink to="/messages/4">Ronaldo</NavLink> </div>
+                        <div className={s.text}>Hello!</div>
                     </div>
                 </div>
                 <div className={s.messege}>
                     <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
                     <div className={s.head}>
-                        <span className={s.userName}>Pele</span>
-                        <span className={s.text}>Hello!</span>
+                        <div className={s.userName}><NavLink to="/messages/5">Messi</NavLink> </div>
+                        <div className={s.text}>Hello!</div>
                     </div>
                 </div>
             </div>
