@@ -1,13 +1,13 @@
-.messeges {
+.messages {
 
 }
-.messege {
+.message {
     display: grid;
     grid-template-areas: "img head";
     grid-template-columns: 1fr 8fr;
     padding: 1rem;
 }
-.messege img {
+.message img {
     display: grid;
     grid-area: img;
     width: 50px;

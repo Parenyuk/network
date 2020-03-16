@@ -6,21 +6,21 @@ const MyPosts = () => {
     return (
         <div>
             <div>My posts</div>
-                <div>New post</div>
+            <div>New post</div>
             <div>
                 <div>
-                    <input placeholder='Say what is on your mind...' className={s.input} />
+                    <input placeholder='Say what is on your mind...' className={s.input}/>
                 </div>
                 <div>
-                    <button>Add Post</button>
+                    <button className={s.button}>Add Post</button>
                 </div>
-                <Post message={`Hi Victor`} likeCount={`like: 20`} />
-                <Post likeCount={`like: 15`} />
+                <Post message={`Hi Victor`} likeCount={`like: 20`}/>
+                <Post likeCount={`like: 15`}/>
                 <Post/>
                 <Post/>
             </div>
-</div>
+        </div>
     )
-    }
-    export default MyPosts;
+}
+export default MyPosts;
 

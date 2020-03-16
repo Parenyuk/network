@@ -11,32 +11,28 @@ import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
 
 
-
 const App = () => {
-  return (
-      <BrowserRouter>
-            <div className="App" >
+    return (
+        <BrowserRouter>
+            <div className="App">
                 <div className="App-wrapper">
-             <Header/>
-             <LeftNavbar/>
-             <div className="App-wrapper-content" >
-                 <Route path="/profile"><Profile/> </Route>
-                 <Route exact  path="/messages"><Messeges/> </Route>
-                 <Route path="/news"><News/> </Route>
-                 <Route path="/audio"><Audio/> </Route>
-                 <Route path="/settings"><Settings/> </Route>
+                    <Header/>
+                    <LeftNavbar/>
+                    <div className="App-wrapper-content">
+                        <Route path="/profile"><Profile/> </Route>
+                        <Route exact path="/messages"><Messeges/> </Route>
+                        <Route path="/news"><News/> </Route>
+                        <Route path="/audio"><Audio/> </Route>
+                        <Route path="/settings"><Settings/> </Route>
 
-             </div>
+                    </div>
 
-             <RightNavbar/>
+                    <RightNavbar/>
                 </div>
             </div>
-      </BrowserRouter>
-  );
+        </BrowserRouter>
+    );
 }
-
-
-
 
 
 export default App;
