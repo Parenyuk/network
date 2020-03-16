@@ -3,3 +3,10 @@
     background-color: white;
     padding-left: 1rem;
 }
+.lnav a{
+    color: #7eb3cf;
+    text-decoration: none;
+}
+.lnav a.activeLink {
+    color: gold;
+}
