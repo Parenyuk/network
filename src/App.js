@@ -11,7 +11,7 @@ import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
 
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className="App">
@@ -19,8 +19,8 @@ const App = () => {
                     <Header/>
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
-                        <Route path="/profile"><Profile/> </Route>
-                        <Route exact path="/messages"><Messages/> </Route>
+                        <Route path="/profile"><Profile postData={props.postData} /> </Route>
+                        <Route exact path="/messages"><Messages messagesData={props.messagesData} /> </Route>
                         <Route path="/news"><News/> </Route>
                         <Route path="/audio"><Audio/> </Route>
                         <Route path="/settings"><Settings/> </Route>
