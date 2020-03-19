@@ -24,7 +24,8 @@ const Messages = (props) => {
         {id: 3, name: 'Zinedin Zidan'},
         {id: 4, name: 'Ronaldo'},
         {id: 5, name: 'Vasia Pypkin'},
-        {id: 6, name: 'Messi'}
+        {id: 6, name: 'Messiii'},
+        {id: 7, name: 'Petr'}
     ]
 
     let messagesData = [
