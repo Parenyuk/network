@@ -19,8 +19,8 @@ const App = (props) => {
                     <Header/>
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
-                        <Route path="/profile"><Profile postData={props.postData} /> </Route>
-                        <Route exact path="/messages"><Messages messagesData={props.messagesData} /> </Route>
+                        <Route path="/profile"><Profile state={props.state.profilePage}/></Route>
+                        <Route exact path="/messages"><Messages state={props.state.messagesPage} /> </Route>
                         <Route path="/news"><News/> </Route>
                         <Route path="/audio"><Audio/> </Route>
                         <Route path="/settings"><Settings/> </Route>

@@ -4,7 +4,7 @@ import Message from "./Message/Message";
 
 const Messages = (props) => {
 
-    let messagesDataElement = props.messagesData.map( d => <Message id={d.id} name={d.name} message={d.message} />)
+    let messagesDataElement = props.state.messagesData.map( d => <Message id={d.id} name={d.name} message={d.message} />)
 
     return (
         <div className={s.messages}>
