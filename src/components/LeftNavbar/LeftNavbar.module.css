@@ -2,6 +2,7 @@
     grid-area: lnav;
     background-color: white;
     padding-left: 1rem;
+    max-height: 30rem;
 }
 .lnav a{
     color: #7eb3cf;

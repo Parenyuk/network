@@ -9,6 +9,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
+import Friends from "./components/Friends/Friends";
 
 
 const App = (props) => {
@@ -24,10 +25,9 @@ const App = (props) => {
                         <Route path="/news"><News/> </Route>
                         <Route path="/audio"><Audio/> </Route>
                         <Route path="/settings"><Settings/> </Route>
-
                     </div>
-
                     <RightNavbar/>
+                    <Friends state={props.state.friendsPage} />
                 </div>
             </div>
         </BrowserRouter>

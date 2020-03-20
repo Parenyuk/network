@@ -1,0 +1,12 @@
+.friends {
+    display: grid;
+    grid-area: friends;
+    background-color: white;
+    max-height: 20rem;
+    padding-left: 1rem;
+    text-align: center;
+    grid-template-areas:
+    'F F F'
+    'F F F'
+    'F F F';
+}
