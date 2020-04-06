@@ -20,7 +20,11 @@ const App = (props) => {
                     <Header/>
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
-                        <Route path="/profile"><Profile state={props.state.profilePage} addPost={props.addPost}/></Route>
+                        <Route path="/profile"><Profile profilePage={props.state.profilePage}
+                                                        addPost={props.addPost}
+                                                        updateNewPostText={props.updateNewPostText}
+
+                        /></Route>
                         <Route exact path="/messages"><Messages state={props.state.messagesPage} /> </Route>
                         <Route path="/news"><News/> </Route>
                         <Route path="/audio"><Audio/> </Route>

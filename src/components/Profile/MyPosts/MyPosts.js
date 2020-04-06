@@ -12,7 +12,15 @@ const MyPosts = (props) => {
         let text = newPostElement.current.value;
         debugger
         props.addPost(text);
+
+    }
+
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
         newPostElement.current.value =''
+
     }
 
     let postDataElement = props.postData.map( d => <Post id={d.id} message={d.message} likeCount={d.likeCount} /> )
@@ -22,7 +30,10 @@ const MyPosts = (props) => {
             <div>New post</div>
             <div>
                 <div>
-                    <input placeholder='Say what is on your mind...' className={s.input} ref={newPostElement}/>
+                    <input placeholder='Say what is on your mind...'
+                           className={s.input} ref={newPostElement}
+                           onChange={onPostChange}
+                           value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={addPost}   className={s.button}>Add Post</button>
