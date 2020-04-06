@@ -32,4 +32,21 @@ let state = {
             ]
         }
     }
+
+export let addPost = (postMessage) => {
+    debugger;
+    let newPost = {
+        id: 6,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.postData.push(newPost)
+}
+
+//     state.profilePage.posts.push(newPost);
+//     state.profilePage.newPostText = '';
+//     rerenderEntireTree(state);
+// }
+
+
 export default state;
