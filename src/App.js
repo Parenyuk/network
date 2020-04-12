@@ -21,8 +21,7 @@ const App = (props) => {
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
                         <Route path="/profile"><Profile profilePage={props.state.profilePage}
-                                                        addPost={props.addPost}
-                                                        updateNewPostText={props.updateNewPostText}
+                                                       dispatch={props.dispatch}
 
                         /></Route>
                         <Route exact path="/messages"><Messages state={props.state.messagesPage} /> </Route>
