@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT'
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 
 
 let store = {
@@ -21,7 +23,8 @@ let store = {
                 {id: 3, name: 'Zinedin Zidan', message: `Hello`},
                 {id: 4, name: 'Ronaldo', message: `Hello`},
                 {id: 5, name: 'Vasia Pypkin', message: `Hello`},
-            ]
+            ],
+            newMessageBody: ''
         },
         friendsPage: {
             friendData: [
@@ -64,10 +67,21 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state)
         }
+        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.messagesPage.newMessageBody = action.body;
+            this._callSubscriber(this._state)
+        }
+        else if (action.type === SEND_MESSAGE) {
+          let body = this._state.messagesPage.newMessageBody;
+            this._state.messagesPage.newMessageBody = action.body = '';
+            this._state.messagesPage.messagesData.push({id: 6, name: 'Vasia Pypkin', message: body});
+            this._callSubscriber(this._state)
+
+        }
     },
 
-
 }
+
 
 export const addPostActionCreator = () => {
     return {
@@ -76,12 +90,14 @@ export const addPostActionCreator = () => {
 }
 export const updateNewPostTextActionCreator = (text) => {
     return {
-        type: UPDATE_NEW_POST_TEXT ,
+        type: UPDATE_NEW_POST_TEXT,
         newText: text
     }
 }
 
-
+export const sendMessageCreator = () => ({type: SEND_MESSAGE})
+export const updateNewMessageBodyCreator = (body) =>
+    ({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
 
 
 
