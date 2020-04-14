@@ -7,14 +7,14 @@ const profileReducer = (state, action) => {
         case ADD_POST:
             let newPost = {
                 id: 6,
-                message: this._state.profilePage.newPostText,
+                message: state.newPostText,
                 likesCount: 0
             };
-            state.profilePage.postData.push(newPost);
-           state.profilePage.newPostText = ""
+            state.postData.push(newPost);
+           state.newPostText = ""
             return state;
         case UPDATE_NEW_POST_TEXT:
-            state.profilePage.newPostText = action.newText;
+            state.newPostText = action.newText;
             return state;
         default:
             return state;
