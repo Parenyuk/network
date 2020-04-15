@@ -2,7 +2,7 @@ import React from "react";
 import s from './Messages.module.css';
 import Message from "./Message/Message";
 import PropTypes from 'prop-types';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/MessagesReducer";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/MessagesPageReducer";
 
 
 

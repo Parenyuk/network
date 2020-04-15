@@ -1,5 +1,5 @@
-import profileReducer from "./ProfileReducer";
-import messageReducer from "./MessagesReducer";
+import profilePageReducer from "./ProfilePageReducer";
+import messageReducer from "./MessagesPageReducer";
 
 let store = {
     _state: {
@@ -11,7 +11,7 @@ let store = {
                 {id: 4, message: `Hghwjhg jkr`, likeCount: 0,},
                 {id: 5, message: `Hwgfl wkj`, likeCount: 11,},
             ],
-            newPostText: 'vaid'
+            newPostText: ''
         },
         messagesPage: {
             messagesData: [
@@ -50,7 +50,7 @@ let store = {
     },
 
     dispatch(action) {
-        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.profilePage = profilePageReducer(this._state.profilePage, action);
         this._state.messagesPage = messageReducer(this._state.messagesPage, action)
 
         this._callSubscriber(this._state);
