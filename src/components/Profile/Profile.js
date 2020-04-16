@@ -9,10 +9,15 @@ const Profile = (props) => {
 
         <div className={s.profile}>
             <ProfileInfo/>
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer />
         </div>
 
     )
 }
 
 export default Profile;
+
+// <div className={s.profile}>
+//     <ProfileInfo/>
+//     <MyPostsContainer store={props.store}/>
+// </div>

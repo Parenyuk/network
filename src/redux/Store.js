@@ -56,33 +56,6 @@ let store = {
         this._callSubscriber(this._state);
     }
 
-    // dispatch(action) {
-    //     if(action.type === ADD_POST) {
-    //         let newPost = {
-    //             id: 6,
-    //             message: this._state.profilePage.newPostText,
-    //             likesCount: 0
-    //         };
-    //         this._state.profilePage.postData.push(newPost);
-    //         this._state.profilePage.newPostText = ""
-    //         this._callSubscriber()
-    //     }
-    //     else if (action.type === UPDATE_NEW_POST_TEXT ) {
-    //         this._state.profilePage.newPostText = action.newText;
-    //         this._callSubscriber(this._state)
-    //     }
-    //     else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-    //         this._state.messagesPage.newMessageBody = action.body;
-    //         this._callSubscriber(this._state)
-    //     }
-    //     else if (action.type === SEND_MESSAGE) {
-    //       let body = this._state.messagesPage.newMessageBody;
-    //         this._state.messagesPage.newMessageBody = action.body = '';
-    //         this._state.messagesPage.messagesData.push({id: 6, name: 'Vasia Pypkin', message: body});
-    //         this._callSubscriber(this._state)
-    //
-    //     }
-    // },
 
 }
 

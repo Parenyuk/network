@@ -1,8 +1,7 @@
 import React from "react";
 import s from './Messages.module.css';
 import Message from "./Message/Message";
-import PropTypes from 'prop-types';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/MessagesPageReducer";
+
 
 
 
@@ -18,13 +17,12 @@ const Messages = (props) => {
 
 
     let onSendMessageClick = () => {
-
     props.sendMessage();
 
 }
     let onNewMessageChange = (e) => {
      let body =   e.target.value;
-     props.store.dispatch( updateNewMessageBodyCreator(body))
+     props.updateNewMessageBody(body)
     }
 
 
