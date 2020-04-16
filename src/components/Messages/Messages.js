@@ -10,7 +10,7 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/Messa
 
 const Messages = (props) => {
 
-    let state = props.store.getState().messagesPage;
+    let state = props.messagesPage;
 
     let messagesDataElement = state.messagesData.map( d => <Message id={d.id} name={d.name} message={d.message} />);
     let newMessageBody = state.messageBody;
@@ -19,7 +19,7 @@ const Messages = (props) => {
 
     let onSendMessageClick = () => {
 
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
 
 }
     let onNewMessageChange = (e) => {

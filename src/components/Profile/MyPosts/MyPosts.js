@@ -13,22 +13,19 @@ const MyPosts = (props) => {
     //     let text = newPostElement.current.value;
     //     props.updateNewPostText(text);
     // }
-    let addPost = () => {
-        let text = newPostElement.current.value;
-
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
 
     }
 
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-         let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action)
-        newPostElement.current.value =''
+        props.updateNewPostText(text)
+
 
     }
-
+    debugger;
     let postDataElement = props.postData.map( d => <Post id={d.id} message={d.message} likeCount={d.likeCount} /> )
     return (
         <div>
@@ -36,13 +33,13 @@ const MyPosts = (props) => {
             <div>New post</div>
             <div>
                 <div>
-                    <input placeholder='Say what is on your mind...'
+                    <textarea placeholder='Say what is on your mind...'
                            className={s.input} ref={newPostElement}
                            onChange={onPostChange}
                            value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={addPost}   className={s.button}>Add Post</button>
+                    <button onClick={onAddPost}   className={s.button}>Add Post</button>
                 </div>
                 {postDataElement}
             </div>
