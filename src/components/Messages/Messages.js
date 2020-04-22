@@ -2,16 +2,11 @@ import React from "react";
 import s from './Messages.module.css';
 import Message from "./Message/Message";
 
-
-
-
-
-
 const Messages = (props) => {
 
     let state = props.messagesPage;
 
-    let messagesDataElement = state.messagesData.map( d => <Message id={d.id} name={d.name} message={d.message} />);
+    let messagesDataElement = state.messagesData.map( d => <Message key={d.id} id={d.id} name={d.name} message={d.message} />);
     let newMessageBody = state.messageBody;
 
 

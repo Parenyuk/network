@@ -13,16 +13,20 @@ const SEND_MESSAGE = 'SEND_MESSAGE';
     }
 
 const messagesPageReducer = (state = initialState, action) => {
+        let stateCopy = {
+            ...state,
+            messages: [...state.messagesData]
+}
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            return state
+            stateCopy.newMessageBody = action.body;
+            return  stateCopy
 
         case SEND_MESSAGE:
             let body = state.newMessageBody;
-            state.newMessageBody = action.body = '';
-             state.messagesData.push({id: 6, name: 'Vasia Pypkin', message: body});
-            return state;
+            stateCopy.newMessageBody = action.body = '';
+            stateCopy.messagesData.push({id: 6, name: 'Vasia Pypkin', message: body});
+            return  stateCopy;
         default:
             return state;
     }

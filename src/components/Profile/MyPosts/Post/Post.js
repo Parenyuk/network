@@ -5,7 +5,7 @@ const Post = (props) => {
     return (
         <div>
             <div className={s.post} >
-                <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' />
+                <img src='https://whatsism.com/uploads/posts/2018-07/1530544023_n6fgwzftnvg.jpg' alt='' />
 
                 {props.message} like: {props.likeCount}
             </div>

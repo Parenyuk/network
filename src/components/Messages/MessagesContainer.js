@@ -1,31 +1,33 @@
 import React from "react";
-import Message from "./Message/Message";
 import PropTypes from 'prop-types';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/MessagesPageReducer";
 import Messages from "./Messages";
-import {connect, mapStateToProps, mapStateToProps} from "react-redux";
+import {connect} from "react-redux";
 
 
 
-const mapStateToProps = (state) => {
+let mapStateToProps = (state) => {
     return {
         messagesPage: state.messagesPage,
     }
 }
-const mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessageBody: () => {
-            dispatch(sendMessageCreator());
+        updateNewMessageBody: (body) => {
+           dispatch(updateNewMessageBodyCreator(body));
         },
         sendMessage: (body) => {
-            dispatch(updateNewMessageBodyCreator(body));
+            dispatch(sendMessageCreator());
         }
     }
 }
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages)
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
 
 export default MessagesContainer;
+
+
+
 
 
 //
