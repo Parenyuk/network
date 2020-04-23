@@ -7,11 +7,11 @@ import {connect} from "react-redux";
 const Friends = (props) => {
     debugger;
 
-    let friendsDataElement = props.friendData.map(d => <Friend id={d.id}  />)
+    let friendsDataElement = props.friendData.map(d => <Friend id={d.id} name={d.name} surname={d.surname} status={d.status} />)
     return (
         <div className={s.friends}>
             {friendsDataElement}
-            <div>View all (45)</div>
+            <div><button>View all (45)</button> </div>
         </div>
     )
 }

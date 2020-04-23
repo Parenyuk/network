@@ -10,6 +10,8 @@ import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
 import Friends from "./components/Friends/Friends";
 import MessagesContainer from "./components/Messages/MessagesContainer";
+import SearchUsers from "./components/SearchUsers/SearchUsers";
+
 
 
 const App = (props) => {
@@ -20,18 +22,16 @@ const App = (props) => {
                     <Header/>
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
-                        <Route path="/profile"><Profile store={props.store}
-
-
-                        /></Route>
+                        <Route path="/profile"><Profile store={props.store}/></Route>
                         <Route exact path="/messages"><MessagesContainer    store={props.store} /> </Route>
                         <Route path="/news"><News/> </Route>
+                        <Route path="/friends"><Friends state={props.state.friendsPage} /></Route>
                         <Route path="/audio"><Audio/> </Route>
+                        <Route path='/SearchUsers'>  <SearchUsers state={props.state}/> </Route>
                         <Route path="/settings"><Settings/> </Route>
-                        <Route ></Route>
                     </div>
                     <RightNavbar/>
-                    <Friends state={props.state.friendsPage} />
+
                 </div>
             </div>
         </BrowserRouter>

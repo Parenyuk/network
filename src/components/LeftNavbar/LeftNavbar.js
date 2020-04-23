@@ -8,6 +8,7 @@ const LeftNavbar = () => {
             <div><NavLink to="/profile" activeClassName={s.activeLink} >Profile</NavLink>  </div>
             <div><NavLink to="/messages" activeClassName={s.activeLink}>Messages</NavLink></div>
             <div><NavLink to="/news" activeClassName={s.activeLink}>News</NavLink></div>
+            <div><NavLink to="/friends" activeClassName={s.activeLink}>Friends</NavLink></div>
             <div><NavLink to="/audio" activeClassName={s.activeLink}>Audio</NavLink></div>
             <div><NavLink to="/settings" activeClassName={s.activeLink}>Settings</NavLink></div>
         </nav>

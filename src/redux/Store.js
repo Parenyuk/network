@@ -36,6 +36,66 @@ let store = {
                 {id: 9, name: 'Nikola'},
 
             ]
+        },
+        searchusers: {
+            users: [
+                {
+                    id: 1,
+                    followed: true,
+                    name: 'Victor',
+                    surname: 'P',
+                    status: 'I am learning  React',
+                    location: {city: 'Kyiv', country: 'Ukraine'}
+                },
+                {
+                    id: 2,
+                    followed: true,
+                    name: 'Vasia',
+                    surname: 'Pypkin',
+                    status: 'I am learn  Redux',
+                    location: {city: 'Poltava', country: 'Ukraine'}
+                },
+                {
+                    id: 3,
+                    followed: true,
+                    name: 'Zinedin',
+                    surname: 'Zidan',
+                    status: 'I am learn  CSS',
+                    location: {city: 'Odesa', country: 'Ukraine'}
+                },
+                {
+                    id: 4,
+                    followed: true,
+                    name: 'Ronaldo',
+                    surname: 'P',
+                    status: 'I am learn  React',
+                    location: {city: 'Lviv', country: 'Ukraine'}
+                },
+                {
+                    id: 5,
+                    followed: true,
+                    name: 'Sveta',
+                    surname: 'R',
+                    status: 'I am learn  React',
+                    location: {city: 'Kyiv', country: 'Ukraine'}
+                },
+                {
+                    id: 6,
+                    followed: true,
+                    name: 'Rikardo',
+                    surname: 'Kaka',
+                    status: 'I am playing football',
+                    location: {city: 'Berlin', country: 'Germany'}
+                },
+                {
+                    id: 7,
+                    followed: true,
+                    name: 'Jordan',
+                    surname: 'R',
+                    status: 'I am paying basktball',
+                    location: {city: 'LA', country: 'USA'}
+                },
+            ]
         }
     },
 
