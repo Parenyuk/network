@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/Store'
+import state from './redux/Store'
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
+import store from './redux/ReduxStore'
 
 let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
-                <App />
+                <App state={state} dispatch={store.dispatch.bind(store)}/>
             </Provider>
         </BrowserRouter>, document.getElementById('root'));
 }
+rerenderEntireTree(state);
 
 
 
