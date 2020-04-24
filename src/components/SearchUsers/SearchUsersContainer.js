@@ -6,20 +6,19 @@ import SearchUsers from "./SearchUsers";
 
 const mapStateToProps = (state) => {
     return {
-        users: state.searchusers .users
+        users: state.searchUsers.users
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        Follow: (usersId) => {
+        follow: (usersId) => {
             dispatch(followAC(userId));
         },
-        Unfollow: (usersId) => {
+        unfollow: (usersId) => {
             dispatch(unfollowAC(userId));
-        }
-
-        SetUsers: (usersId) => {
-            dispatch(setUsersAC(userId));
+        },
+        setUsers: (users) => {
+            dispatch(setUsersAC(user));
         }
 }
 const SearchUsersContainer = connect(mapStateToProps, mapDispatchToProps )(SearchUsers);

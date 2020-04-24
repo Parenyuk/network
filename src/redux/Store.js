@@ -37,7 +37,7 @@ let store = {
 
             ]
         },
-        searchusers: {
+        searchUsers: {
             users: [
                 {
                     id: 1,

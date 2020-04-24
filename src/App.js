@@ -27,7 +27,8 @@ const App = (props) => {
                         <Route path="/news"><News/> </Route>
                         <Route path="/friends"><Friends state={props.state.friendsPage} /></Route>
                         <Route path="/audio"><Audio/> </Route>
-                        <Route path='/SearchUsers'>  <SearchUsers state={props.state}/> </Route>
+                        <Route path='/SearchUsers'>
+                            <SearchUsers state={props.state}/> </Route>
                         <Route path="/settings"><Settings/> </Route>
                     </div>
                     <RightNavbar/>
