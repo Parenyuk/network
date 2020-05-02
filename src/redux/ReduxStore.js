@@ -2,13 +2,14 @@ import {createStore, combineReducers} from 'redux';
 import friendsPageReducer from "./FriendsPageReducer";
 import profilePageReducer from "./ProfilePageReducer";
 import messagesPageReducer from "./MessagesPageReducer";
-import SearchUsersPageReducer from "./SearchUsersPageReducer";
+import usersReducer from "./UsersReducer";
+
 
 let reducers = combineReducers({
        profilePage: profilePageReducer,
        messagesPage: messagesPageReducer,
        friendsPage: friendsPageReducer,
-        SearchUsers: SearchUsersPageReducer,
+        usersPage: usersReducer
     }
     )
 
@@ -16,3 +17,4 @@ let reducers = combineReducers({
 let store = createStore(reducers);
 
 export default store;
+

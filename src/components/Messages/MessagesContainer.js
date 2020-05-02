@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/MessagesPageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";

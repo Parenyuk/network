@@ -37,66 +37,88 @@ let store = {
 
             ]
         },
-        searchUsers: {
-            users: [
-                {
-                    id: 1,
-                    followed: true,
-                    name: 'Victor',
-                    surname: 'P',
-                    status: 'I am learning  React',
-                    location: {city: 'Kyiv', country: 'Ukraine'}
-                },
-                {
-                    id: 2,
-                    followed: true,
-                    name: 'Vasia',
-                    surname: 'Pypkin',
-                    status: 'I am learn  Redux',
-                    location: {city: 'Poltava', country: 'Ukraine'}
-                },
-                {
-                    id: 3,
-                    followed: true,
-                    name: 'Zinedin',
-                    surname: 'Zidan',
-                    status: 'I am learn  CSS',
-                    location: {city: 'Odesa', country: 'Ukraine'}
-                },
-                {
-                    id: 4,
-                    followed: true,
-                    name: 'Ronaldo',
-                    surname: 'P',
-                    status: 'I am learn  React',
-                    location: {city: 'Lviv', country: 'Ukraine'}
-                },
-                {
-                    id: 5,
-                    followed: true,
-                    name: 'Sveta',
-                    surname: 'R',
-                    status: 'I am learn  React',
-                    location: {city: 'Kyiv', country: 'Ukraine'}
-                },
-                {
-                    id: 6,
-                    followed: true,
-                    name: 'Rikardo',
-                    surname: 'Kaka',
-                    status: 'I am playing football',
-                    location: {city: 'Berlin', country: 'Germany'}
-                },
-                {
-                    id: 7,
-                    followed: true,
-                    name: 'Jordan',
-                    surname: 'R',
-                    status: 'I am paying basktball',
-                    location: {city: 'LA', country: 'USA'}
-                },
+        usersPage: {
+            usersData: [
+                {id: 1,  name: 'Victor'},
+                {id: 2, name: 'Vasia Pypkin'},
+                {id: 3, name: 'Zinedin Zidan'},
+                {id: 4, name: 'Ronaldo'},
+                {id: 5, name: 'Sveta'},
+                {id: 6, name: 'Vasia '},
+                {id: 7, name: 'Kaka'},
+                {id: 8, name: 'Victoria'},
+                {id: 9, name: 'Nikola'},
+
             ]
-        }
+        },
+
+        // searchUsers: {
+        //     users: [
+        //         {
+        //             id: 1,
+        //             photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: true,
+        //             name: 'Victor',
+        //             surname: 'P',
+        //             status: 'I am learning  React',
+        //             location: {city: 'Kyiv', country: 'Ukraine'}
+        //         },
+        //         {
+        //             id: 2,
+        //             photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: true,
+        //             name: 'Vasia',
+        //             surname: 'Pypkin',
+        //             status: 'I am learn  Redux',
+        //             location: {city: 'Poltava', country: 'Ukraine'}
+        //         },
+        //         {
+        //             id: 3,
+        //                 photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: true,
+        //             name: 'Zinedin',
+        //             surname: 'Zidan',
+        //             status: 'I am learn  CSS',
+        //             location: {city: 'Odesa', country: 'Ukraine'}
+        //         },
+        //         {
+        //             id: 4,
+        //                 photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: false,
+        //             name: 'Ronaldo',
+        //             surname: 'P',
+        //             status: 'I am learn  React',
+        //             location: {city: 'Lviv', country: 'Ukraine'}
+        //         },
+        //         {
+        //             id: 5,
+        //                 photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: false,
+        //             name: 'Sveta',
+        //             surname: 'R',
+        //             status: 'I am learn  React',
+        //             location: {city: 'Kyiv', country: 'Ukraine'}
+        //         },
+        //         {
+        //             id: 6,
+        //                 photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: true,
+        //             name: 'Rikardo',
+        //             surname: 'Kaka',
+        //             status: 'I am playing football',
+        //             location: {city: 'Berlin', country: 'Germany'}
+        //         },
+        //         {
+        //             id: 7,
+        //                 photoUrl: 'https://www.hrw.org/sites/default/files/styles/square/public/multimedia_images_2015/2015_dewa-mavhinga_03_web-bio.jpg?itok=YFRPAxZy',
+        //             followed: true,
+        //             name: 'Jordan',
+        //             surname: 'R',
+        //             status: 'I am paying basktball',
+        //             location: {city: 'LA', country: 'USA'}
+        //         },
+        //     ]
+        // }
     },
 
     _callSubscriber () {

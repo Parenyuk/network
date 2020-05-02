@@ -10,7 +10,9 @@ import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
 import Friends from "./components/Friends/Friends";
 import MessagesContainer from "./components/Messages/MessagesContainer";
-import SearchUsers from "./components/SearchUsers/SearchUsers";
+import UsersContainer from "./components/Users/UsersContainer";
+
+
 
 
 
@@ -27,8 +29,7 @@ const App = (props) => {
                         <Route path="/news"><News/> </Route>
                         <Route path="/friends"><Friends state={props.state.friendsPage} /></Route>
                         <Route path="/audio"><Audio/> </Route>
-                        <Route path='/SearchUsers'>
-                            <SearchUsers state={props.state}/> </Route>
+                        <Route path='/users'><UsersContainer /></Route>
                         <Route path="/settings"><Settings/> </Route>
                     </div>
                     <RightNavbar/>
@@ -42,3 +43,5 @@ const App = (props) => {
 
 export default App;
 
+//state={props.state.friendsPage}
+//store={props.state.searchUsers}
