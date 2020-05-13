@@ -24,7 +24,7 @@ const App = (props) => {
                     <Header/>
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
-                        <Route path="/profile"><ProfileContainer store={props.store}/></Route>
+                        <Route path="/profile/:userId?"><ProfileContainer store={props.store}/></Route>
                         <Route exact path="/messages"><MessagesContainer    store={props.store} /> </Route>
                         <Route path="/news"><News/> </Route>
                         <Route path="/friends"><Friends state={props.state.friendsPage} /></Route>
