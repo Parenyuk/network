@@ -61,7 +61,6 @@ let Users = (props) => {
                                     });
 
                             }}>Follow</button>}
-
                     </div>
                 </span>
                 <span>
