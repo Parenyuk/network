@@ -11,6 +11,7 @@ import Friends from "./components/Friends/Friends";
 import MessagesContainer from "./components/Messages/MessagesContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 
@@ -21,7 +22,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className="App">
                 <div className="App-wrapper">
-                    <Header/>
+                    <HeaderContainer />
                     <LeftNavbar/>
                     <div className="App-wrapper-content">
                         <Route path="/profile/:userId?"><ProfileContainer store={props.store}/></Route>
