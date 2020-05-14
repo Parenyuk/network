@@ -15,7 +15,10 @@ let initialState = {
                 ...action.data,
                 isAuth: true
             }
+        default:
+            return state;
     }
+
     }
 
 

@@ -12,9 +12,10 @@ let reducers = combineReducers({
        friendsPage: friendsPageReducer,
         usersPage: usersReducer,
         auth: authReducer
-    }
-    )
+    });
 let store = createStore(reducers);
 
 export default store;
+
+
 
