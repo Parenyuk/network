@@ -8,7 +8,6 @@ import {
     toggleIsFetching,
     unfollow
 } from '../../redux/UsersReducer';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from "../Common/Preloader/Preloader";
 import {userAPI} from "../../API/API";
@@ -62,4 +61,4 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,
-    {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContainer);
+    {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleFollowingProgress})(UsersContainer);
