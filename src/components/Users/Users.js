@@ -33,9 +33,11 @@ let Users = (props) => {
                         </NavLink>
                     </div>
                     <div>
-                        {u.followed
+                            {u.followed
+
                             ? <button onClick={() => {
-                                props.toggleFollowingProgress(true)
+                                debugger;
+                                props.toggleFollowingProgress(false)
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                     withCredentials: true,
                                     headers: {
@@ -47,8 +49,11 @@ let Users = (props) => {
                                         props.unfollow(u.id)
                                     }
                                 });
+
                             }}>Unfollow</button>
                             : <button onClick={() => {
+                                    debugger;
+                                props.toggleFollowingProgress(true)
                                 axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                                     withCredentials: true,
                                     headers: {
