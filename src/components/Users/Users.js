@@ -14,6 +14,7 @@ let Users = (props) => {
         pages.push(i);
     }
 
+
     return <div>
         <div>
             {pages.map(p => {
@@ -27,46 +28,49 @@ let Users = (props) => {
             props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <NavLink to={"/profile/" + u.id} >
+                       <NavLink to={'/profile/' + u.id}>
                         <img src={u.photos.small != null ? u.photos.small : userPhoto}
                              className={styles.userPhoto}/>
-                        </NavLink>
+                       </NavLink>
                     </div>
                     <div>
-                            {u.followed
-
-                            ? <button onClick={() => {
-                                debugger;
-                                props.toggleFollowingProgress(false)
+                        {u.followed
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true, u.id);
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                     withCredentials: true,
                                     headers: {
-                                        'API-KEY': '9f30f44f-419b-4bf8-bd04-721891f6ba94'
-                                    }
-                            })
-                            .then(response => {
-                                    if (response.data.resultCode === 0) {
-                                        props.unfollow(u.id)
-                                    }
-                                });
-
-                            }}>Unfollow</button>
-                            : <button onClick={() => {
-                                    debugger;
-                                props.toggleFollowingProgress(true)
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                    withCredentials: true,
-                                    headers: {
-                                        'API-KEY': '9f30f44f-419b-4bf8-bd04-721891f6ba94'
+                                        "API-KEY": "b1775b2f-c3a5-4509-8dc9-90b5629de7c3"
                                     }
                                 })
                                     .then(response => {
-                                     if (response.data.resultCode === 0) {
-                                         props.follow(u.id)
-                                     }
+                                        if (response.data.resultCode == 0) {
+                                            props.unfollow(u.id);
+                                        }
+                                        props.toggleFollowingProgress(false, u.id);
                                     });
 
+
+
+                            }}>Unfollow</button>
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true, u.id);
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "b1775b2f-c3a5-4509-8dc9-90b5629de7c3"
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode == 0) {
+                                            props.follow(u.id);
+                                        }
+                                        props.toggleFollowingProgress(false, u.id);
+                                    });
+
+
                             }}>Follow</button>}
+
                     </div>
                 </span>
                 <span>
