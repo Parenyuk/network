@@ -12,6 +12,7 @@ import MessagesContainer from "./components/Messages/MessagesContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
 
 
 
@@ -31,7 +32,10 @@ const App = (props) => {
                         <Route path="/friends"><Friends state={props.state.friendsPage} /></Route>
                         <Route path="/audio"><Audio/> </Route>
                         <Route path='/users'><UsersContainer /></Route>
+
                         <Route path="/settings"><Settings/> </Route>
+                        <Route path='/login'><Login /></Route>
+
                     </div>
                     <RightNavbar/>
 
