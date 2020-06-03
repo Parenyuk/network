@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import Profile from "./Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/ProfilePageReducer";
-import {Redirect, withRouter} from "react-router";
-import {usersAPI} from "../../API/API";
+import {withRouter} from "react-router";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 
 
@@ -20,15 +20,23 @@ import {usersAPI} from "../../API/API";
     }
 
     render() {
-        if (!this.props.isAuth) return <Redirect to={"/login"} /> ;
+
         return (
             <Profile {...this.props} profile={this.props.profile} />
         );
     }
 }
 let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
+    profile: state.profilePage.profile
+
 })
-let withUrlDataContainerComponent = withRouter(ProfileContainer)
-export default connect(mapStateToProps, {getUserProfile})(withUrlDataContainerComponent)
+
+export default  compose(
+    connect(mapStateToProps, {getUserProfile}),
+    withRouter,
+    withAuthRedirect
+)(ProfileContainer);
+
+
+
+
