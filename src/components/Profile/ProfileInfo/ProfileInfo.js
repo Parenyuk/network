@@ -7,7 +7,7 @@ const ProfileInfo = (props) => {
     if(!props.profile) {
         return <Preloader/>
     }
-    debugger
+
     return (
         <div className={s.profileInfo} >
             {/*<img src="https://i.ytimg.com/vi/cq2Ef6rvL6g/maxresdefault.jpg" alt=""/>*/}
