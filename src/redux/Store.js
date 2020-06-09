@@ -14,7 +14,7 @@ let store = {
             newPostText: ''
         },
         messagesPage: {
-            messagesData: [
+            messages: [
                 {id: 1, name: 'Victor', message: `Hi`},
                 {id: 2, name: 'Vasia Pypkin', message: `kyky`},
                 {id: 3, name: 'Zinedin Zidan', message: `Hello`},

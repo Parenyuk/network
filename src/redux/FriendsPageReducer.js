@@ -14,18 +14,17 @@ const initialState = {
 const friendsPageReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
-            return {
-                ...state,
-                newMessageBody: action.body
-            };
-        case SEND_MESSAGE:
-            let body = state.newMessageBody;
-            return {
-                ...state,
-                newMessageBody: '',
-                messages: [...state.messagesData, {id: 6, name: 'Vasia Pypkin', message: body}]
-            }
+        // case UPDATE_NEW_MESSAGE_BODY:
+        //     return {
+        //         ...state,
+        //         newMessageBody: action.body
+        //     };
+        // case SEND_MESSAGE:
+        //     let body = action.newMessageBody;
+        //     return {
+        //         ...state,
+        //         messages: [...state.messages, {id: 6, name: 'Vasia Pypkin', message: body}]
+        //     }
 
         default:
             return state;
@@ -38,7 +37,6 @@ export const updateNewMessageBodyCreator = (body) =>
     ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
 export default friendsPageReducer;
-
 
 
 

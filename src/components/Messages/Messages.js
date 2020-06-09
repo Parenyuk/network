@@ -2,40 +2,49 @@ import React from "react";
 import s from './Messages.module.css';
 import Message from "./Message/Message";
 import {Redirect} from "react-router";
+import {Field, reduxForm} from 'redux-form'
 
 const Messages = (props) => {
 
     let state = props.messagesPage;
-
-    let messagesDataElement = state.messagesData.map( d => <Message key={d.id} id={d.id} name={d.name} message={d.message} />);
+    let messagesDataElement = state.messages.map(d => <Message key={d.id} id={d.id} name={d.name}
+                                                                   message={d.message}/>);
     let newMessageBody = state.messageBody;
 
 
+    if (!props.isAuth) return <Redirect to={"/login"}/>;
 
-    let onSendMessageClick = () => {
-    props.sendMessage();
-
-}
-    let onNewMessageChange = (e) => {
-     let body =   e.target.value;
-     props.updateNewMessageBody(body)
+    const submitMessage = (messageData) => {
+       props.sendMessage(messageData.newMessageBody);
     }
 
-
-    if (!props.isAuth) return <Redirect to={"/login"} /> ;
     return (
         <div className={s.messages}>
             <div className={s.messagesItem}>
                 <div>{messagesDataElement}</div>
-                <div><textarea value={newMessageBody}
-                               onChange={onNewMessageChange}
-                               placeholder='Enter your message'></textarea> </div>
-                <div><button onClick={onSendMessageClick} >Send</button></div>
 
             </div>
+            <AddMessageFormRedux onSubmit={submitMessage} />
         </div>
     )
 }
+
+const AddMessageForm = (props) => {
+    return (
+        <div>
+            <form onSubmit={props.handleSubmit}>
+                <Field component={'textarea'} name={'newMessageBody'} placeholder={'Enter your message'}/>
+                <div>
+                    <button>Send</button>
+                </div>
+            </form>
+        </div>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({
+    form: 'AddMessageForm'
+})(AddMessageForm)
 
 export default Messages;
 /*

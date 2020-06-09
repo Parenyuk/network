@@ -13,7 +13,6 @@ const initialState = {
         {id: 4, message: `Hghwjhg jkr`, likeCount: 0,},
         {id: 5, message: `Hwgfl wkj`, likeCount: 11,},
     ],
-    newPostText: '',
     profile: null,
     status: ''
 }
@@ -23,20 +22,17 @@ const profilePageReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 6,
-                message: state.newPostText,
+                message: action.newPostText,
                 likesCount: 0
             };
             let stateCopy = {
                 ...state,
-            posts: [...state.postData, newPost],
+            postData: [...state.postData, newPost],
             newPostText: ""
             };
             return stateCopy;
         }
-        case UPDATE_NEW_POST_TEXT: {
-            return {...state,
-                newPostText: action.newText}
-       }
+
         case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
         }
@@ -48,8 +44,7 @@ const profilePageReducer = (state = initialState, action) => {
       }
 
 }
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text})
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const getUserProfile = (userId) => (dispatch) => {
