@@ -2,7 +2,8 @@ import React from "react";
 import s from './Messages.module.css';
 import Message from "./Message/Message";
 import {Redirect} from "react-router";
-import {Field, reduxForm} from 'redux-form'
+import AddMessageFormRedux from "./AddMessageFormRedux/AddMessageFormRedux";
+
 
 const Messages = (props) => {
 
@@ -29,22 +30,7 @@ const Messages = (props) => {
     )
 }
 
-const AddMessageForm = (props) => {
-    return (
-        <div>
-            <form onSubmit={props.handleSubmit}>
-                <Field component={'textarea'} name={'newMessageBody'} placeholder={'Enter your message'}/>
-                <div>
-                    <button>Send</button>
-                </div>
-            </form>
-        </div>
-    )
-}
 
-const AddMessageFormRedux = reduxForm({
-    form: 'AddMessageForm'
-})(AddMessageForm)
 
 export default Messages;
 /*
