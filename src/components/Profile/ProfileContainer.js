@@ -13,7 +13,8 @@ import {compose} from "redux";
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 7525
+
+            userId = this.props.autorizedUserId
         }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId)
@@ -31,8 +32,9 @@ import {compose} from "redux";
 }
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
-
+    status: state.profilePage.status,
+    autorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth
 })
 
 export default  compose(
