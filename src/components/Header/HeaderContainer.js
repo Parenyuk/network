@@ -3,8 +3,6 @@ import Header from "./Header";
 
 import {connect} from "react-redux";
 import {logout} from "../../redux/AuthReducer";
-import {authAPI} from "../../API/API";
-
 
 class HeaderContainer extends Component{
 

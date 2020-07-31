@@ -4,13 +4,15 @@ import Post from "./Post/Post";
 import AddPostFormRedux from "./Post/AddPostFormRedux/AddPostFormRedux";
 
 
-
-
-const MyPosts = (props) => {
-    let postDataElement = props.postData.map(d => <Post id={d.id} message={d.message} likeCount={d.likeCount}/>)
+const MyPosts = React.memo(props => {
+    let deletePost = (postId) => {
+        props.deletePost(postId)
+    }
+    let postDataElement =
+        [...props.postData].reverse()
+       .map(d => <Post id={d.id} message={d.message} likeCount={d.likeCount} deletePost={deletePost} />)
     let newPostElement = React.createRef();
     let onAddPost = (postData) => {
-        debugger
         props.addPost(postData.newPostText);
     }
 
@@ -24,7 +26,8 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-}
+});
+
 
 
 export default MyPosts;
