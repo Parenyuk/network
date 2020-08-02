@@ -14,6 +14,8 @@ let Users = ({totalItemsCount, pageSize, currentPage, onPageChanged, users, port
                 users.map(u => <User user={u} key={u.id} followingInProgress={props.followingInProgress}
                                      follow={props.follow} unfollow={props.unfollow}/>)
             }
+            <Paginator totalItemsCount={totalItemsCount} pageSize={pageSize} currentPage={currentPage}
+                       onPageChanged={onPageChanged} portionSize={portionSize} />
         </div>
     )
 }

@@ -17,7 +17,6 @@ const Friends = (props) => {
 }
 
 const mstp = (state) => {
-    debugger
     return {
         friendData: state.friendsPage.friendData
     }
