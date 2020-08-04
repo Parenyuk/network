@@ -2,7 +2,7 @@ import React, {Suspense} from 'react';
 import './App.css';
 import LeftNavbar from "./components/LeftNavbar/LeftNavbar";
 import RightNavbar from "./components/RightNavbar/RightNavbar";
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Audio from "./components/Audio/Audio";
 import News from "./components/News/News";
@@ -35,7 +35,6 @@ class App extends React.Component {
 
 
         return (
-            <BrowserRouter>
                 <div className="App">
                     <div className="App-wrapper">
                         <HeaderContainer/>
@@ -58,7 +57,6 @@ class App extends React.Component {
 
                     </div>
                 </div>
-            </BrowserRouter>
         );
     }
 }
@@ -72,9 +70,9 @@ const AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 export const MainApp = (props)=> {
- return   <BrowserRouter>
+ return   <HashRouter>
         <Provider store={store}>
            <AppContainer state={state} />
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }

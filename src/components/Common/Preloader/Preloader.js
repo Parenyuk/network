@@ -1,9 +1,9 @@
 import React from 'react';
-import preloader from "../../../assets/image/Spinner-1s-200px.svg";
+import preloader from '../../../assets/image/Spinner-1s-200px.svg';
 
 let Preloader = (props) => {
-    return <div  style={ { backgroundColor: 'white' } }>
-        <img src={preloader} />
+    return <div style={{backgroundColor: 'white'}}>
+        <img src={preloader}/>
     </div>
 }
 
