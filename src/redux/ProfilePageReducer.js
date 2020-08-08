@@ -1,11 +1,12 @@
-import {profileAPI, usersAPI} from "../API/API";
+import {profileAPI, usersAPI} from '../API/API';
 
 const ADD_POST = 'ADD_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 const SET_USER_PROFILE = 'SET_USERP_ROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
-const UPDATE_PHOTO = 'UPDATE_PHOTO'
+const UPDATE_PHOTO = 'UPDATE_PHOTO';
+const SAVE_PROFILE = 'SAVE_PROFILE'
 
 const initialState = {
     postData: [
@@ -30,7 +31,7 @@ const profilePageReducer = (state = initialState, action) => {
             let stateCopy = {
                 ...state,
                 postData: [...state.postData, newPost],
-                newPostText: ""
+                newPostText: ''
             };
             return stateCopy;
         }
@@ -46,8 +47,11 @@ const profilePageReducer = (state = initialState, action) => {
             return {...state, status: action.status}
         }
         case UPDATE_PHOTO: {
-            debugger;
             return {...state, profile: {...state.profile, photos: action.photos}}
+        }
+        case SAVE_PROFILE: {
+            debugger;
+            return {...state, profile: action.profile}
         }
         default:
             return state;
@@ -59,7 +63,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePostActionCreator = (postId) => ({type: DELETE_POST, postId})
 export const updatePhotoAC = (photos) => ({type: UPDATE_PHOTO, photos})
-
+export const saveProfileAC = (profile) => ({type: SAVE_PROFILE, profile})
 
 export const getUserProfile = (userId) => async (dispatch) => {
     try {
@@ -98,7 +102,17 @@ export const savePhoto = (file) => async (dispatch) => {
     } catch (e) {
 
     }
+}
+export const saveProfile = (profile) => async (dispatch) => {
+    try {
+        let response = await profileAPI.saveProfile(profile);
+        debugger;
+        if (response.data.resultCode === 0) {
+            dispatch(updatePhotoAC(response.data.data.photos))
+        }
+    } catch (e) {
 
+    }
 }
 
 export default profilePageReducer;

@@ -3,7 +3,6 @@ import s from "./Paginator.module.css";
 import cn from "classnames";
 
 const Paginator  = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize=10}) => {
-    debugger;
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
     let pages = [];
@@ -16,10 +15,6 @@ const Paginator  = ({totalItemsCount, pageSize, currentPage, onPageChanged, port
     let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionPageNumber = portionNumber * portionSize;
 
-   // let prevButton = () => {
-   //      setPortionNumber(portionNumber - 1)
-   //  }
-
     return (
         <div>
             {
@@ -29,11 +24,9 @@ const Paginator  = ({totalItemsCount, pageSize, currentPage, onPageChanged, port
             {pages
                 .filter(p => p >= leftPortionPageNumber && p<= rightPortionPageNumber)
                 .map((p) => {
-                // return <span className={currentPage === p && s.selectedPage}
                              return <span className={ cn({
                                  [s.selectedPage]: currentPage === p
                 }, s.pageNumber) }
-
                              key={p}
                              onClick={(e) => {
                                  onPageChanged(p);

@@ -27,11 +27,3 @@ export default compose(
     withAuthRedirect)
 (Messages);
 
-
-/*
-Messages.propTypes = {
-    name: PropTypes.string;
-    messagesData: PropTypes.string;
-};
-
- */
