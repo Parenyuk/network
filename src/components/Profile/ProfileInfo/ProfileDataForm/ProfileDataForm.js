@@ -15,21 +15,21 @@ import s from '../../../Common/FormsControls/FormsControls.module.css';
                 </div>
                 }
                 <div>
-                <b>Full name</b>: { createField('Full name', 'fullname', Input, [] )}
+                <b>Full name</b>: { createField('Full name', 'fullname', Input, null )}
             </div>
             <div>
-                <b>Looking for a job</b>: {createField('', 'lookingForAJob', Input, [], {type: 'checkbox'} )}
+                <b>Looking for a job</b>: {createField('', 'lookingForAJob', Input, null, {type: 'checkbox'} )}
             </div>
             <div>
-                <b>My professional skills</b>: {createField('My professional skills', 'lookingForAJobDescription', TextArea, [] )}
+                <b>My professional skills</b>: {createField('My professional skills', 'lookingForAJobDescription', TextArea, null )}
             </div>
                       <div>
-                <b>About me</b>: {createField('About me', 'AboutMe', TextArea, [] )}
+                <b>About me</b>: {createField('About me', 'AboutMe', TextArea, null )}
             </div>
             <div>
                 <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
                 return <div key={key} /*className={s.contact}*/>
-                <b>{key}: {createField(key, 'contacts.' + key, Input, [] )}</b>
+                <b>{key}: {createField(key, 'contacts.' + key, Input, null )}</b>
                 </div>
                 // <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
             })}

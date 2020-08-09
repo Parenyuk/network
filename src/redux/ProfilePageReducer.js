@@ -50,10 +50,6 @@ const profilePageReducer = (state = initialState, action) => {
         case UPDATE_PHOTO: {
             return {...state, profile: {...state.profile, photos: action.photos}}
         }
-        // case SAVE_PROFILE: {
-        //     debugger;
-        //     return {...state, profile: action.profile}
-        // }
         default:
             return state;
     }
@@ -64,7 +60,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePostActionCreator = (postId) => ({type: DELETE_POST, postId})
 export const updatePhotoAC = (photos) => ({type: UPDATE_PHOTO, photos})
-// export const saveProfileAC = (profile) => ({type: SAVE_PROFILE, profile})
+
 
 export const getUserProfile = (userId) => async (dispatch) => {
     try {
