@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import s from './ProfileInfo.module.css'
-import Preloader from "../../Common/Preloader/Preloader";
-import userPhoto from "../../../assets/photo/user.png";
-import ProfileDataForm from "./ProfileDataForm/ProfileDataForm";
+import Preloader from '../../Common/Preloader/Preloader';
+import userPhoto from '../../../assets/photo/user.png';
+import ProfileDataFormReduxForm from './ProfileDataForm/ProfileDataForm';
 
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
@@ -21,7 +21,11 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 
     const onSubmitProfileData = (formData) => {
         debugger
-      saveProfile(formData)
+        saveProfile(formData).then(
+            () => {
+                setEditMode(false)
+            }
+        )
     }
 
     return (
@@ -30,15 +34,43 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                 <img src={profile.photos.large || userPhoto} className={s.profileImg}/>
                 {isOwner && <input type={'file'} onChange={mainPhotoSelected}/>}
                 {editMode
-                    ? <ProfileDataForm profile={profile} onSubmit={onSubmitProfileData} />
-                    : <ProfileData profile={profile} isOwner={isOwner} activateEditMode={()=> {setEditMode(true)} }/>}
+                    ?
+                    <ProfileDataFormReduxForm initiakValues={profile} profile={profile} onSubmit={onSubmitProfileData}/>
+                    : <ProfileData profile={profile} isOwner={isOwner} activateEditMode={() => {
+                        setEditMode(true)
+                    }}/>}
             </div>
         </div>
     )
 }
 
+
 const ProfileData = ({profile, isOwner, activateEditMode}) => {
-    return <ProfileDataForm />
+    return (<div>
+            {isOwner && <div>
+                <button onClick={activateEditMode}>edit</button>
+            </div>}
+            <div>
+                <b>Full name</b>: {profile.fullName}
+            </div>
+            <div>
+                <b>Looking for a job</b>: {profile.lookingForAJob ? 'yes' : 'no'}
+            </div>
+            {profile.lookingForAJob &&
+            <div>
+                <b>My professional skills</b>: {profile.lookingForAJobDescription}
+            </div>
+            }
+            <div>
+                <b>About me</b>: {profile.aboutMe}
+            </div>
+            <div>
+                <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
+                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+            })}
+            </div>
+        </div>
+    )
 }
 
 
